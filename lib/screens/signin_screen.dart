@@ -40,9 +40,12 @@ class SigninScreen extends StatelessWidget {
                   Icons.email,
                   color: Colors.black87,
                 ),
-                title: Text(
-                  'Email',
-                  style: TextStyle(color: Colors.black38),
+                title: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    hintStyle: TextStyle(color: Colors.black38),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
             ),
@@ -56,9 +59,12 @@ class SigninScreen extends StatelessWidget {
                   Icons.lock,
                   color: Colors.black87,
                 ),
-                title: Text(
-                  'Password',
-                  style: TextStyle(color: Colors.black38),
+                title: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    hintStyle: TextStyle(color: Colors.black38),
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
             ),
