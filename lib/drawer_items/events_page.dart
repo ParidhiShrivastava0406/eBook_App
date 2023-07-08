@@ -10,7 +10,7 @@ class _EventsPageState extends State<EventsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal[800],
+        backgroundColor: Colors.teal[700],
         toolbarHeight: 65,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),

@@ -5,7 +5,7 @@ import '../bottomNavBar/profile_screen.dart';
 import '../bottomNavBar/home_screen.dart';
 import '../my_drawer_header.dart';
 import '../my_drawer.dart';
-import '../bottomNavBar/bottom_nav.dart';
+import 'package:ebook_app/searchPage.dart';
 
 class FirstScreen extends StatefulWidget {
   @override
@@ -52,11 +52,18 @@ class _FirstScreenState extends State<FirstScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.teal[800],
+        backgroundColor: Colors.teal[700],
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SearchPage(),
+                ),
+              );
+            },
           ),
           IconButton(
             icon: Icon(Icons.notifications),
@@ -99,7 +106,28 @@ class _FirstScreenState extends State<FirstScreen> {
       ),
       body: Container(child: _navScreen.elementAt(_currentIndex)),
       bottomNavigationBar: Container(
-        child: BottomNav(),
+        child: BottomNavigationBar(
+          iconSize: 27,
+          backgroundColor: Colors.teal[700],
+          currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
+          fixedColor: Colors.white70,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.collections_bookmark_rounded),
+              label: 'Library',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+          onTap: _navTap,
+        ),
       ),
     );
   }
