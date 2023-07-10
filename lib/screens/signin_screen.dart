@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'first_screen.dart';
+import '../bottomNavBar.dart';
 import 'signup_screen.dart';
 
 class SigninScreen extends StatelessWidget {

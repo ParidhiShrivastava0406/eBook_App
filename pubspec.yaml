@@ -30,6 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  rflutter_alert: ^2.0.7
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,6 +42,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+
+
+
 
 flutter_icons:
   android: true
@@ -88,6 +93,10 @@ flutter:
     - family: Signature
       fonts:
       - asset: assets/fonts/Signature.otf
+
+    - family: Amsterdam
+      fonts:
+      - asset: assets/fonts/Amsterdam Personal Use.ttf
   #
   #
   # For details regarding fonts from package dependencies,

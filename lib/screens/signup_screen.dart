@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signin_screen.dart';
-import 'first_screen.dart';
+import '../bottomNavBar.dart';
 
 class SignupScreen extends StatelessWidget {
   @override
