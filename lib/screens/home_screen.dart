@@ -1,11 +1,11 @@
 import 'package:ebook_app/screens/library_screen.dart';
 import 'package:ebook_app/screens/premiumDescriptionPage.dart';
 import 'package:ebook_app/screens/searchPage.dart';
-import 'package:ebook_app/screens/storyDescriptionPage.dart';
+import 'package:ebook_app/pdf/storyDescriptionPage.dart';
 import 'package:flutter/material.dart';
-import 'package:ebook_app/drawer_items/notifications_page.dart';
-import 'package:ebook_app/my_drawer.dart';
-import 'package:ebook_app/my_drawer_header.dart';
+import 'package:ebook_app/drawer/my_drawer.dart';
+import 'package:ebook_app/drawer/my_drawer_header.dart';
+import '../drawer/drawer_items/notifications_page.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,14 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: Icon(Icons.search),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SearchPage(),
-                ),
-              );
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.notifications),
@@ -52,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         toolbarHeight: 65,
         title: Text(
-          'e-book Reader',
+          'WordsWorth',
           style: TextStyle(
             fontFamily: 'Raleway',
           ),
@@ -152,15 +145,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by Eve Ocotillo',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
-                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -207,15 +199,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by FayJay',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
-                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -262,14 +253,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by salifiable',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -306,7 +296,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               image: AssetImage('assets/images/4.jpg'),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 12,
                             ),
                             Text(
                               'Like a Sparrow \n through the Heart',
@@ -323,9 +313,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               'by Aggy Bird',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -357,7 +346,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             'See \n more ...',
                             style: TextStyle(
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 18,
                               fontFamily: 'Raleway',
                             ),
@@ -424,15 +413,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Barack Obama',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -487,15 +472,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Alex Michaelides',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -550,15 +531,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Douglas Stuart',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -613,15 +590,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Roopa Pai',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -661,7 +634,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             'See \n more ...',
                             style: TextStyle(
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 18,
                               fontFamily: 'Raleway',
                             ),
@@ -714,7 +687,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             'Adventure',
                             style: TextStyle(
                               fontFamily: 'Amsterdam',
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 12,
                             ),
                           ),
@@ -746,7 +719,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             'Romance',
                             style: TextStyle(
                               fontFamily: 'Amsterdam',
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 12,
                             ),
                           ),
@@ -778,7 +751,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             'Educational',
                             style: TextStyle(
                               fontFamily: 'Amsterdam',
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 12,
                             ),
                           ),
@@ -810,7 +783,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             'Fiction',
                             style: TextStyle(
                               fontFamily: 'Amsterdam',
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 12,
                             ),
                           ),
@@ -841,7 +814,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             'See \n more ...',
                             style: TextStyle(
-                              color: Colors.yellow[700],
+                              color: Colors.yellow[800],
                               fontSize: 18,
                               fontFamily: 'Raleway',
                             ),

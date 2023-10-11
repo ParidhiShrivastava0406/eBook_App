@@ -1,11 +1,11 @@
-import 'package:ebook_app/drawer_items/create_story.dart';
 import 'package:ebook_app/screens/readMore.dart';
 import 'package:flutter/material.dart';
 import 'package:ebook_app/screens/searchPage.dart';
-import 'package:ebook_app/drawer_items/notifications_page.dart';
-import 'package:ebook_app/my_drawer.dart';
-import 'package:ebook_app/my_drawer_header.dart';
-import 'storyDescriptionPage.dart';
+import 'package:ebook_app/drawer/my_drawer.dart';
+import 'package:ebook_app/drawer/my_drawer_header.dart';
+import '../drawer/drawer_items/notifications_page.dart';
+import '../drawer/drawer_items/createStories.dart';
+import '../pdf/storyDescriptionPage.dart';
 
 class Library extends StatefulWidget {
   @override
@@ -320,15 +320,11 @@ class _LibraryState extends State<Library> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Barack Obama',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -383,15 +379,11 @@ class _LibraryState extends State<Library> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Alex Michaelides',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -446,15 +438,11 @@ class _LibraryState extends State<Library> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Douglas Stuart',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -509,15 +497,11 @@ class _LibraryState extends State<Library> {
                                 color: Colors.teal[200],
                               ),
                             ),
-                            SizedBox(
-                              height: 5,
-                            ),
                             Text(
                               'by Roopa Pai',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -600,15 +584,14 @@ class _LibraryState extends State<Library> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by Eve Ocotillo',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
-                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -655,15 +638,14 @@ class _LibraryState extends State<Library> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by FayJay',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
-                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
@@ -710,14 +692,13 @@ class _LibraryState extends State<Library> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by salifiable',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -766,14 +747,13 @@ class _LibraryState extends State<Library> {
                               ),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 2,
                             ),
                             Text(
                               'by Aggy Bird',
                               style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: 'Signature',
-                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                fontFamily: 'Brasil',
                                 color: Colors.yellow[800],
                               ),
                             ),
@@ -812,7 +792,7 @@ class _LibraryState extends State<Library> {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   letterSpacing: 4,
-                  color: Colors.yellow[700],
+                  color: Colors.yellow[800],
                   fontSize: 10,
                 ),
               ),
@@ -825,11 +805,9 @@ class _LibraryState extends State<Library> {
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CreateStory(),
-                        ),
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateStories()));
                     },
                     child: CircleAvatar(
                       backgroundColor: Colors.black38,
@@ -837,7 +815,7 @@ class _LibraryState extends State<Library> {
                       child: Icon(
                         Icons.add,
                         size: 40,
-                        color: Colors.orange[600],
+                        color: Colors.yellow[800],
                       ),
                     ),
                   ),

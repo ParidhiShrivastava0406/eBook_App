@@ -31,6 +31,14 @@ dependencies:
   flutter:
     sdk: flutter
   rflutter_alert: ^2.0.7
+  dio: ^5.3.3
+  path_provider: ^2.1.1
+  syncfusion_flutter_pdfviewer: ^23.1.39
+  firebase_core: ^2.17.0
+  cloud_firestore: ^4.9.3
+  firebase_auth: ^4.10.1
+  firebase_storage: ^11.2.8
+
 
 
 
@@ -86,13 +94,13 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Brasil
+      fonts:
+      - asset: assets/fonts/BrasileirinhaPersonalUseRegular-v5GE.ttf
+
     - family: Raleway
       fonts:
       - asset: assets/fonts/Raleway-SemiBold.ttf
-
-    - family: Signature
-      fonts:
-      - asset: assets/fonts/Signature.otf
 
     - family: Amsterdam
       fonts:

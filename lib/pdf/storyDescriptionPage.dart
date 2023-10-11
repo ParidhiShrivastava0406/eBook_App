@@ -1,6 +1,7 @@
+import 'package:ebook_app/pdf/downloadPdf.dart';
 import 'package:flutter/material.dart';
-
-import '../drawer_items/feedback_page.dart';
+import '../drawer/drawer_items/feedback_page.dart';
+import 'openPdf.dart';
 
 class DescriptivePage extends StatefulWidget {
   @override
@@ -68,9 +69,8 @@ class _DescriptivePageState extends State<DescriptivePage> {
                     'by Eve Ocotillo',
                     style: TextStyle(
                       color: Colors.yellow[700],
-                      fontSize: 35,
-                      fontFamily: 'Signature',
-                      fontWeight: FontWeight.bold,
+                      fontSize: 36,
+                      fontFamily: 'Brasil',
                     ),
                   ),
                   SizedBox(
@@ -115,23 +115,23 @@ class _DescriptivePageState extends State<DescriptivePage> {
                       SizedBox(width: 120),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star_border_outlined,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       )
                     ],
                   ),
@@ -175,6 +175,12 @@ class _DescriptivePageState extends State<DescriptivePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => OpenPdf()));
+                        },
                         child: Container(
                           height: 50,
                           width: 150,
@@ -201,7 +207,11 @@ class _DescriptivePageState extends State<DescriptivePage> {
                       ),
                       SizedBox(width: 30),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (context) => DownloadPdf());
+                        },
                         child: Container(
                           height: 50,
                           width: 150,

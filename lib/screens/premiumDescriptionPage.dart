@@ -1,6 +1,6 @@
 import 'package:ebook_app/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import '../drawer_items/feedback_page.dart';
+import '../drawer/drawer_items/feedback_page.dart';
 import 'buyPremium_screen.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -70,9 +70,8 @@ class _PremiumDescriptiveState extends State<PremiumDescriptive> {
                     'by Barack Obama',
                     style: TextStyle(
                       color: Colors.yellow[700],
-                      fontSize: 35,
-                      fontFamily: 'Signature',
-                      fontWeight: FontWeight.bold,
+                      fontSize: 36,
+                      fontFamily: 'Brasil',
                     ),
                   ),
                   SizedBox(
@@ -117,23 +116,23 @@ class _PremiumDescriptiveState extends State<PremiumDescriptive> {
                       SizedBox(width: 120),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       ),
                       Icon(
                         Icons.star_half_outlined,
-                        color: Colors.yellow[600],
+                        color: Colors.yellow[500],
                       )
                     ],
                   ),

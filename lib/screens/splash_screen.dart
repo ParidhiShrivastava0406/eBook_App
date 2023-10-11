@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'signup_screen.dart';
+import '../authentication/signup_screen.dart';
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
@@ -43,10 +43,10 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Center(
               child: Text(
-                'eBook Reader',
+                'WordsWorth',
                 style: TextStyle(
                   color: Colors.orange[800],
-                  fontSize: 35,
+                  fontSize: 33,
                   fontFamily: 'Raleway',
                 ),
               ),

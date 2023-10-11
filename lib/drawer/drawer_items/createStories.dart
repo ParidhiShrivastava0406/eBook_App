@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CreateStory extends StatefulWidget {
-  @override
-  State<CreateStory> createState() => _CreateStoryState();
-}
+class CreateStories extends StatelessWidget {
+  const CreateStories({Key? key}) : super(key: key);
 
-class _CreateStoryState extends State<CreateStory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

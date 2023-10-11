@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392183878903",
+    "project_id": "wordsworth-87010",
+    "storage_bucket": "wordsworth-87010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392183878903:android:35533238284d27fe0faff2",
+        "android_client_info": {
+          "package_name": "com.example.ebook_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJzJlJ3IoIv_I411Tj8GDrx5qhUbjK7Nw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

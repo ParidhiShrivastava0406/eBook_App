@@ -1,8 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'signin_screen.dart';
 import '../bottomNavBar.dart';
+import 'firbase_auth.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  final FirebaseAuthServices _auth = FirebaseAuthServices();
+
+  TextEditingController _usernameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +63,7 @@ class SignupScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 title: TextField(
+                  controller: _usernameController,
                   decoration: InputDecoration(
                     hintText: 'Full Name',
                     hintStyle: TextStyle(color: Colors.black38),
@@ -66,6 +89,7 @@ class SignupScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 title: TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     hintText: 'Email',
                     hintStyle: TextStyle(color: Colors.black38),
@@ -85,6 +109,7 @@ class SignupScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 title: TextField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Password',
@@ -98,12 +123,7 @@ class SignupScreen extends StatelessWidget {
               height: 60,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => FirstScreen()),
-                );
-              },
+              onTap: _signUp,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -127,10 +147,10 @@ class SignupScreen extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => SigninScreen()),
-                );
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => SigninScreen()),
+                    (route) => false);
               },
               child: Text(
                 'Already have an account? SignIn here',
@@ -145,5 +165,43 @@ class SignupScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _signUp() async {
+    String username = _usernameController.text;
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signUpWithEmailAndPassword(email, password);
+    if (user != null) {
+      print('User is successfully created');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => FirstScreen()));
+    } else {
+      setState(() {
+        Alert(
+          context: context,
+          title: 'OOPS!',
+          desc: '1. Password should be atleast 6 characters. \n'
+              '2. Your entered email must be wrong.\n'
+              '3. The email address is already in use by another account.',
+          buttons: [
+            DialogButton(
+              color: Colors.teal[600],
+              child: Text(
+                "Ok",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'Raleway',
+                ),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
+        ).show();
+      });
+    }
   }
 }

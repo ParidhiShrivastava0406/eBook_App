@@ -1,11 +1,11 @@
-import 'package:ebook_app/drawer_items/create_story.dart';
-import 'package:ebook_app/drawer_items/events_page.dart';
-import 'package:ebook_app/drawer_items/feedback_page.dart';
-import 'package:ebook_app/drawer_items/friends_page.dart';
-import 'package:ebook_app/drawer_items/notifications_page.dart';
-import 'package:ebook_app/drawer_items/privacy_policy_page.dart';
-import 'package:ebook_app/drawer_items/settings_page.dart';
 import 'package:flutter/material.dart';
+import 'drawer_items/createStories.dart';
+import 'drawer_items/events_page.dart';
+import 'drawer_items/feedback_page.dart';
+import 'drawer_items/friends_page.dart';
+import 'drawer_items/notifications_page.dart';
+import 'drawer_items/privacy_policy_page.dart';
+import 'drawer_items/settings_page.dart';
 
 class MyDrawerList extends StatefulWidget {
   @override
@@ -38,7 +38,7 @@ class _MyDrawerListState extends State<MyDrawerList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => CreateStory(),
+                  builder: (context) => CreateStories(),
                 ),
               );
             },

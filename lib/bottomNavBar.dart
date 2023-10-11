@@ -1,3 +1,5 @@
+import 'package:ebook_app/firebaseDatabase/addBook.dart';
+import 'package:ebook_app/firebaseDatabase/wishBooks.dart';
 import 'package:flutter/material.dart';
 import 'screens/library_screen.dart';
 import 'screens/profile_screen.dart';
@@ -14,6 +16,7 @@ class _FirstScreenState extends State<FirstScreen> {
   List<Widget> _navScreen = <Widget>[
     HomeScreen(),
     Library(),
+    Favourites(),
     Profile(),
   ];
 
@@ -42,6 +45,10 @@ class _FirstScreenState extends State<FirstScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.collections_bookmark_rounded),
               label: 'Library',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book_rounded),
+              label: 'BookList',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),

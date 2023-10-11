@@ -1,8 +1,28 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import '../bottomNavBar.dart';
+import 'firbase_auth.dart';
 import 'signup_screen.dart';
 
-class SigninScreen extends StatelessWidget {
+class SigninScreen extends StatefulWidget {
+  @override
+  State<SigninScreen> createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SigninScreen> {
+  final FirebaseAuthServices _auth = FirebaseAuthServices();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +61,7 @@ class SigninScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 title: TextField(
+                  controller: _emailController,
                   decoration: InputDecoration(
                     hintText: 'Email',
                     hintStyle: TextStyle(color: Colors.black38),
@@ -60,6 +81,7 @@ class SigninScreen extends StatelessWidget {
                   color: Colors.black87,
                 ),
                 title: TextField(
+                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Password',
@@ -93,12 +115,7 @@ class SigninScreen extends StatelessWidget {
               height: 50,
             ),
             GestureDetector(
-              onTap: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => FirstScreen()),
-                );
-              },
+              onTap: _signIn,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -140,5 +157,42 @@ class SigninScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+    if (user != null) {
+      print('User is successfully signedIn');
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => FirstScreen()),
+          (route) => false);
+    } else {
+      setState(() {
+        Alert(
+          context: context,
+          title: 'OOPS!',
+          desc: 'Your entered email or password or both must be wrong.',
+          buttons: [
+            DialogButton(
+              color: Colors.teal[600],
+              child: Text(
+                "Ok",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontFamily: 'Raleway',
+                ),
+              ),
+              onPressed: () => Navigator.pop(context),
+              width: 120,
+            )
+          ],
+        ).show();
+      });
+    }
   }
 }

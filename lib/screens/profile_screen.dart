@@ -1,10 +1,12 @@
+import 'package:ebook_app/authentication/signin_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ebook_app/screens/storyDescriptionPage.dart';
+import 'package:ebook_app/pdf/storyDescriptionPage.dart';
+import '../drawer/drawer_items/notifications_page.dart';
 import 'library_screen.dart';
 import 'package:ebook_app/screens/searchPage.dart';
-import 'package:ebook_app/drawer_items/notifications_page.dart';
-import 'package:ebook_app/my_drawer.dart';
-import 'package:ebook_app/my_drawer_header.dart';
+import 'package:ebook_app/drawer/my_drawer.dart';
+import 'package:ebook_app/drawer/my_drawer_header.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -104,6 +106,26 @@ class _ProfileState extends State<Profile> {
                     fontFamily: 'Raleway',
                     color: Colors.white38,
                     fontSize: 13,
+                  ),
+                ),
+                SizedBox(
+                  height: 7,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => SigninScreen()),
+                        (route) => false);
+                  },
+                  child: Text(
+                    'Sign out',
+                    style: TextStyle(
+                        fontFamily: 'Raleway',
+                        color: Colors.yellow[700],
+                        fontSize: 10,
+                        decoration: TextDecoration.underline),
                   ),
                 ),
               ],
@@ -209,7 +231,7 @@ class _ProfileState extends State<Profile> {
                           'About',
                           style: TextStyle(
                             fontFamily: 'Raleway',
-                            color: Colors.teal[600],
+                            color: Colors.teal[700],
                             fontSize: 18,
                           ),
                         ),
@@ -234,7 +256,7 @@ class _ProfileState extends State<Profile> {
                     style: TextStyle(
                       fontSize: 20,
                       fontFamily: 'Raleway',
-                      color: Colors.deepOrange[700],
+                      color: Colors.orange[700],
                     ),
                   ),
                   SingleChildScrollView(
@@ -278,16 +300,12 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.teal[200],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
                                 Text(
                                   'by Eve Ocotillo',
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'Signature',
+                                    fontSize: 22,
+                                    fontFamily: 'Brasil',
                                     color: Colors.yellow[800],
-                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
@@ -333,16 +351,12 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.teal[200],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
                                 Text(
                                   'by FayJay',
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'Signature',
+                                    fontSize: 22,
+                                    fontFamily: 'Brasil',
                                     color: Colors.yellow[800],
-                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ],
@@ -388,15 +402,11 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.teal[200],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
                                 Text(
                                   'by salifiable',
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'Signature',
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 22,
+                                    fontFamily: 'Brasil',
                                     color: Colors.yellow[800],
                                   ),
                                 ),
@@ -444,15 +454,11 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.teal[200],
                                   ),
                                 ),
-                                SizedBox(
-                                  height: 5,
-                                ),
                                 Text(
                                   'by Aggy Bird',
                                   style: TextStyle(
-                                    fontSize: 20,
-                                    fontFamily: 'Signature',
-                                    fontWeight: FontWeight.w600,
+                                    fontSize: 22,
+                                    fontFamily: 'Brasil',
                                     color: Colors.yellow[800],
                                   ),
                                 ),
@@ -485,7 +491,7 @@ class _ProfileState extends State<Profile> {
                               child: Text(
                                 'See \n more ...',
                                 style: TextStyle(
-                                  color: Colors.yellow[700],
+                                  color: Colors.yellow[800],
                                   fontSize: 18,
                                   fontFamily: 'Raleway',
                                 ),
