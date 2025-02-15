@@ -26,3 +26,7 @@ A beautifully designed **Flutter** eBook application that allows users to **sign
 - Install **Dart**
 - Setup **Android Studio** or **VS Code** with Flutter extensions
 
+### 🔹 Steps to Run the App:
+-flutter pub get
+-flutter run
+
